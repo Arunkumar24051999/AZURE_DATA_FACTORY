@@ -1,0 +1,50 @@
+{
+	"name": "ds_order_items_s3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_s3_order_items",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AmazonS3Location",
+				"bucketName": "awss3arun",
+				"folderPath": "csv",
+				"fileName": "order_items.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "10",
+				"type": "String"
+			},
+			{
+				"name": "11",
+				"type": "String"
+			},
+			{
+				"name": "957",
+				"type": "String"
+			},
+			{
+				"name": "13",
+				"type": "String"
+			},
+			{
+				"name": "299.984",
+				"type": "String"
+			},
+			{
+				"name": "299.985",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

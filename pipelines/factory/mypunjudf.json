@@ -1,0 +1,9 @@
+{
+	"name": "mypunjudf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9e7b64ff-65bd-4fa4-abea-0590c1fefca5",
+		"tenantId": "2c1d59e3-ae14-45f6-abdc-50083e83f8e1"
+	}
+}
