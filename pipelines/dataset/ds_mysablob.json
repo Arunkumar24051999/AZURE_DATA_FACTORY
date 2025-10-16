@@ -1,0 +1,40 @@
+{
+	"name": "ds_mysablob",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_mysablob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "orders.csv",
+				"container": "ordersip"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "order_id",
+				"type": "String"
+			},
+			{
+				"name": "order_date",
+				"type": "String"
+			},
+			{
+				"name": "order_customer_id",
+				"type": "String"
+			},
+			{
+				"name": "order_status",
+				"type": "String"
+			}
+		]
+	}
+}
