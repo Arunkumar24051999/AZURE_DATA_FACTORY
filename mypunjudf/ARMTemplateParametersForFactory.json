@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "mypunjudf"
+		},
+		"ls_mysablob_connectionString": {
+			"value": ""
+		},
+		"ls_order_items_dl_accountKey": {
+			"value": ""
+		},
+		"ls_s3_order_items_secretAccessKey": {
+			"value": ""
+		},
+		"ls_order_items_dl_properties_typeProperties_url": {
+			"value": "https://mysadls.dfs.core.windows.net/"
+		},
+		"ls_s3_order_items_properties_typeProperties_accessKeyId": {
+			"value": "AKIAYWBJYCPVPCYWPOJ7"
+		}
+	}
+}
