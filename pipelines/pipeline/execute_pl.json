@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "execute_pl",
 	"properties": {
 		"activities": [
 			{
@@ -88,6 +88,9 @@
 				}
 			}
 		],
+		"folder": {
+			"name": "execute_pipeline"
+		},
 		"annotations": []
 	}
 }
