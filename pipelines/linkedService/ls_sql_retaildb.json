@@ -1,0 +1,17 @@
+{
+	"name": "ls_sql_retaildb",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "myserver98.database.windows.net",
+			"database": "RETAILDB",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "arun",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDQ1MzA5ODhDLTkzNTAtNDlDRC1BMEFFLTM1Q0Q2RkFGN0E2Ql9hOWFkYzNkYi1mNjJlLTRiMjEtYWJlZC01MGYyNWE0YWVlZGMiDQp9"
+		}
+	}
+}
