@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'secretAccessKey' of 'ls_s3_order_items'"
 		},
+		"ls_sql_retaildb_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_sql_retaildb'"
+		},
 		"ls_order_items_dl_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://mysadls.dfs.core.windows.net/"
@@ -26,6 +30,18 @@
 		"ls_s3_order_items_properties_typeProperties_accessKeyId": {
 			"type": "string",
 			"defaultValue": "AKIAYWBJYCPVPCYWPOJ7"
+		},
+		"ls_sql_retaildb_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "myserver98.database.windows.net"
+		},
+		"ls_sql_retaildb_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "RETAILDB"
+		},
+		"ls_sql_retaildb_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "arun"
 		}
 	},
 	"variables": {
@@ -77,6 +93,28 @@
 						"value": "[parameters('ls_s3_order_items_secretAccessKey')]"
 					},
 					"authenticationType": "AccessKey"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_sql_retaildb')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('ls_sql_retaildb_properties_typeProperties_server')]",
+					"database": "[parameters('ls_sql_retaildb_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('ls_sql_retaildb_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('ls_sql_retaildb_password')]"
+					}
 				}
 			},
 			"dependsOn": []
@@ -335,6 +373,51 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/ls_order_items_dl')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ds_sql_retaildb')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ls_sql_retaildb",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "order_id",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "order_date",
+						"type": "varchar"
+					},
+					{
+						"name": "order_customer_id",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "order_status",
+						"type": "varchar"
+					},
+					{
+						"name": "order_amount",
+						"type": "float",
+						"precision": 15
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "premium_orders"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/ls_sql_retaildb')]"
 			]
 		},
 		{

@@ -14,11 +14,23 @@
 		"ls_s3_order_items_secretAccessKey": {
 			"value": ""
 		},
+		"ls_sql_retaildb_password": {
+			"value": ""
+		},
 		"ls_order_items_dl_properties_typeProperties_url": {
 			"value": "https://mysadls.dfs.core.windows.net/"
 		},
 		"ls_s3_order_items_properties_typeProperties_accessKeyId": {
 			"value": "AKIAYWBJYCPVPCYWPOJ7"
+		},
+		"ls_sql_retaildb_properties_typeProperties_server": {
+			"value": "myserver98.database.windows.net"
+		},
+		"ls_sql_retaildb_properties_typeProperties_database": {
+			"value": "RETAILDB"
+		},
+		"ls_sql_retaildb_properties_typeProperties_userName": {
+			"value": "arun"
 		}
 	}
 }
