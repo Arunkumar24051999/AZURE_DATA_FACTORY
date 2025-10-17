@@ -128,6 +128,9 @@
 					"referenceName": "ls_order_items_dl",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "ds_orders"
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
@@ -155,6 +158,9 @@
 				"linkedServiceName": {
 					"referenceName": "ls_order_items_dl",
 					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "ds_orders"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -184,6 +190,9 @@
 					"referenceName": "ls_order_items_dl",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "ds_orders"
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
@@ -211,6 +220,9 @@
 				"linkedServiceName": {
 					"referenceName": "ls_mysablob",
 					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "ds_orders"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -257,6 +269,9 @@
 					"referenceName": "ls_order_items_dl",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "ds_order_items"
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
@@ -284,6 +299,9 @@
 				"linkedServiceName": {
 					"referenceName": "ls_s3_order_items",
 					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "ds_order_items"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -339,6 +357,9 @@
 					"referenceName": "ls_order_items_dl",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "ds_orders"
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
@@ -383,6 +404,9 @@
 				"linkedServiceName": {
 					"referenceName": "ls_sql_retaildb",
 					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "ds_sql"
 				},
 				"annotations": [],
 				"type": "AzureSqlTable",
@@ -490,6 +514,9 @@
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
+				"folder": {
+					"name": "pl_ingest"
+				},
 				"annotations": []
 			},
 			"dependsOn": [
@@ -566,6 +593,9 @@
 				],
 				"policy": {
 					"elapsedTimeMetric": {}
+				},
+				"folder": {
+					"name": "pl_ingest"
 				},
 				"annotations": [],
 				"lastPublishTime": "2025-10-11T00:30:24Z"
@@ -702,6 +732,9 @@
 				],
 				"policy": {
 					"elapsedTimeMetric": {}
+				},
+				"folder": {
+					"name": "pl_adl_sql"
 				},
 				"annotations": []
 			},
@@ -887,6 +920,9 @@
 				],
 				"policy": {
 					"elapsedTimeMetric": {}
+				},
+				"folder": {
+					"name": "pl_process_orders"
 				},
 				"annotations": []
 			},
