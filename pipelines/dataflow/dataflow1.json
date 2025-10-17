@@ -19,15 +19,7 @@
 				}
 			],
 			"scriptLines": [
-				"source(output(",
-				"          {10} as string,",
-				"          {11} as string,",
-				"          {957} as string,",
-				"          {13} as string,",
-				"          {299.984} as string,",
-				"          {299.985} as string",
-				"     ),",
-				"     allowSchemaDrift: true,",
+				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> orderitemstream",
 				"orderitemstream aggregate() ~> orderitemaggregate"
