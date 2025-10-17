@@ -285,27 +285,27 @@
 				},
 				"schema": [
 					{
-						"name": "10",
+						"name": "order_item_id",
 						"type": "String"
 					},
 					{
-						"name": "11",
+						"name": "order_item_order_id",
 						"type": "String"
 					},
 					{
-						"name": "957",
+						"name": "order_item_product_id",
 						"type": "String"
 					},
 					{
-						"name": "13",
+						"name": "order_item_quantity",
 						"type": "String"
 					},
 					{
-						"name": "299.984",
+						"name": "order_item_subtotal",
 						"type": "String"
 					},
 					{
-						"name": "299.985",
+						"name": "order_item_price",
 						"type": "String"
 					}
 				]
