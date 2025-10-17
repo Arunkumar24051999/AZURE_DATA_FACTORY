@@ -5,6 +5,9 @@
 			"referenceName": "ls_mysablob",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "ds_orders"
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {

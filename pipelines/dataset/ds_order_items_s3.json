@@ -5,6 +5,9 @@
 			"referenceName": "ls_s3_order_items",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "ds_order_items"
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {

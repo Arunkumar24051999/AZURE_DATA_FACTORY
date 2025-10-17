@@ -5,6 +5,9 @@
 			"referenceName": "ls_sql_retaildb",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "ds_sql"
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [

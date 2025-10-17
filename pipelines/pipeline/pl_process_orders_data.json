@@ -27,6 +27,9 @@
 				}
 			}
 		],
+		"folder": {
+			"name": "pl_process_orders"
+		},
 		"annotations": []
 	}
 }
