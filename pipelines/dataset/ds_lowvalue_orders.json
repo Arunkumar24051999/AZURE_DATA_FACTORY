@@ -1,5 +1,5 @@
 {
-	"name": "ds_orders_sadl",
+	"name": "ds_lowvalue_orders",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_order_items_dl",
@@ -10,31 +10,14 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "orders",
-				"fileSystem": "myfiles"
+				"folderPath": "low_value_orders",
+				"fileSystem": "finaloutput"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": [
-			{
-				"name": "order_id",
-				"type": "String"
-			},
-			{
-				"name": "order_date",
-				"type": "String"
-			},
-			{
-				"name": "order_customer_id",
-				"type": "String"
-			},
-			{
-				"name": "order_status",
-				"type": "String"
-			}
-		]
+		"schema": []
 	}
 }
