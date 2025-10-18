@@ -31,6 +31,9 @@
 		},
 		"ls_sql_retaildb_properties_typeProperties_userName": {
 			"value": "arun"
+		},
+		"tr_ingest_process_orders_data_properties_typeProperties_scope": {
+			"value": "/subscriptions/4c2bb014-39a9-4bee-8893-a4f61d6d85ed/resourceGroups/Customer360/providers/Microsoft.Storage/storageAccounts/mysablob"
 		}
 	}
 }
