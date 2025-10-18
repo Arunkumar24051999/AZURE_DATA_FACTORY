@@ -43,7 +43,7 @@
 			"type": "string",
 			"defaultValue": "arun"
 		},
-		"tr_ingest_process_orders_data_properties_typeProperties_scope": {
+		"trigger_pl_ingest_orders_data_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/4c2bb014-39a9-4bee-8893-a4f61d6d85ed/resourceGroups/Customer360/providers/Microsoft.Storage/storageAccounts/mysablob"
 		}
@@ -911,36 +911,6 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/tr_ingest_process_orders_data')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "execute_pl",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "BlobEventsTrigger",
-				"typeProperties": {
-					"blobPathBeginsWith": "/ordersip/blobs/",
-					"ignoreEmptyBlobs": true,
-					"scope": "[parameters('tr_ingest_process_orders_data_properties_typeProperties_scope')]",
-					"events": [
-						"Microsoft.Storage.BlobCreated"
-					]
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/execute_pl')]"
-			]
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/orders_dataflow')]",
 			"type": "Microsoft.DataFactory/factories/dataflows",
 			"apiVersion": "2018-06-01",
@@ -1073,6 +1043,36 @@
 				"[concat(variables('factoryId'), '/datasets/ds_highvalue_orders')]",
 				"[concat(variables('factoryId'), '/datasets/ds_lowvalue_orders')]",
 				"[concat(variables('factoryId'), '/datasets/ds_errroneous_values')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger_pl_ingest_orders_data')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "execute_pl",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "BlobEventsTrigger",
+				"typeProperties": {
+					"blobPathBeginsWith": "/ordersip/blobs/",
+					"ignoreEmptyBlobs": true,
+					"scope": "[parameters('trigger_pl_ingest_orders_data_properties_typeProperties_scope')]",
+					"events": [
+						"Microsoft.Storage.BlobCreated"
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/execute_pl')]"
 			]
 		}
 	]
