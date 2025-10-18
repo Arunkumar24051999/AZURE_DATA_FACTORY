@@ -1,0 +1,17 @@
+{
+	"name": "trigger_pl_ingest_orders_data",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/ordersip/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/4c2bb014-39a9-4bee-8893-a4f61d6d85ed/resourceGroups/Customer360/providers/Microsoft.Storage/storageAccounts/mysablob",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
